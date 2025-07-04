@@ -3,7 +3,7 @@ import asyncio
 import logging
 
 from handlers.caesar import caesar_cipher, dccaesar
-from handlers.vernam import dcvernam, vernam
+from handlers.vernam import dcvernam, vernam_cipher
 from handlers.emoji import dcemoji, emoji_cipher
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')  
 
@@ -21,7 +21,7 @@ async def main():
     dp.include_router(caesar_cipher.router)
     dp.include_router(start.router)
     dp.include_router(dccaesar.router)
-    dp.include_router(vernam.router)
+    dp.include_router(vernam_cipher.router)
     dp.include_router(dcvernam.router)
     dp.include_router(emoji_cipher.router)
     dp.include_router(dcemoji.router)
